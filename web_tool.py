@@ -154,4 +154,5 @@ else:
     # Reset button
     if st.button("🔄 Start Over"):
         st.session_state.clear()
-        st.experimental_rerun()
+        st.rerun()
+
