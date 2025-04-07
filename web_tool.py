@@ -31,19 +31,9 @@ st.markdown("Paste up to **30 ticket and tracking numbers**, then select the res
 
 cols = st.columns(2)
 with cols[0]:
-    ticket_input = st.text_area(
-    "📝 Ticket Numbers (optional)",
-    placeholder="TKT-001\nTKT-002\n...",
-    height=200,
-    key="tickets_raw"
-)
+    st.text_area("📝 Ticket Numbers (optional)", key="tickets_raw", height=250)
 with cols[1]:
-    tracking_input = st.text_area(
-    "📦 Tracking Numbers (required)",
-    placeholder="1Z123...\n1Z456...\n...",
-    height=200,
-    key="trackings_raw"
-)
+    st.text_area("📦 Tracking Numbers (required)", key="trackings_raw", height=250)
 
 tickets = [line.strip() for line in st.session_state.get("tickets_raw", "").strip().splitlines()]
 trackings = [line.strip() for line in st.session_state.get("trackings_raw", "").strip().splitlines()]
